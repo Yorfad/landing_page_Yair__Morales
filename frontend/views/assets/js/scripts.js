@@ -67,7 +67,7 @@ const changeForm = (action) => {
         document.querySelector('.section__form--sign-up').classList.remove('visible');
     } else if (action === 'signup') {
         document.querySelector('.section__form--sign-up').classList.add('visible');
-        document.querySelector('.section__form-log-in').classList.remove('visible');
+        document.querySelector('.section__form--log-in').classList.remove('visible');
     }
 };
 

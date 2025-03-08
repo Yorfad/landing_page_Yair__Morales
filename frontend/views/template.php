@@ -20,7 +20,7 @@ $path = TemplateController::path();
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="<?php echo $path ?>/views/assets/css/styles.css" rel="stylesheet" />
+    <link href="/frontend/views/assets/css/styles.css" rel="stylesheet" />
 </head>
 
 <body id="page-top">
@@ -29,12 +29,13 @@ $path = TemplateController::path();
 
         <?php
 
-        include 'modules/nav.php';
-        include 'modules/header.php';
-        include 'pages/portfolio/portfolio.php';
-        include 'pages/contact/contact.php';
-        include 'modules/footer.php';
-        include 'modules/copyright.php';
+            include 'modules/nav.php'; /* si funcina */
+            include 'modules/header.php'; /* si funciona */
+            include 'pages/portfolio/portfolio.php'; /* funciona, falta imagenes */
+            include 'pages/contact/contact.php'; /* funciona */
+            include 'modules\copyright.php'; /* no funcina */
+            include 'modules\footer.php'; /* no funciona */
+            include 'pages/login/login.php'; /* Incluye el formulario flotante */
         ?>
 
 

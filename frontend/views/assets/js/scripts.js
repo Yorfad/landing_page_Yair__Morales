@@ -23,13 +23,11 @@ window.addEventListener('DOMContentLoaded', event => {
 
     };
 
-    // Shrink the navbar 
+
     navbarShrink();
 
-    // Shrink the navbar when page is scrolled
     document.addEventListener('scroll', navbarShrink);
 
-    // Activate Bootstrap scrollspy on the main nav element
     const mainNav = document.body.querySelector('#mainNav');
     if (mainNav) {
         new bootstrap.ScrollSpy(document.body, {
@@ -38,7 +36,7 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     };
 
-    // Collapse responsive navbar when toggler is visible
+ 
     const navbarToggler = document.body.querySelector('.navbar-toggler');
     const responsiveNavItems = [].slice.call(
         document.querySelectorAll('#navbarResponsive .nav-link')
@@ -52,6 +50,36 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+
+
+
+const mostrarLogin = () => {
+    const fondoOscuro = document.getElementById('dark-background');
+    fondoOscuro.classList.toggle('visible');
+    document.querySelector('.section__formulario--log-in').classList.add('visible');
+    document.querySelector('.section__formulario--sign-up').classList.remove('visible');
+};
+
+const changeForm = (action) => {
+    if (action === 'login') {
+        document.querySelector('.section__formulario--log-in').classList.add('visible');
+        document.querySelector('.section__formulario--sign-up').classList.remove('visible');
+    } else if (action === 'signup') {
+        document.querySelector('.section__formulario--sign-up').classList.add('visible');
+        document.querySelector('.section__formulario--log-in').classList.remove('visible');
+    }
+};
+
+
+const fondoOscuro = document.getElementById('dark-background');
+fondoOscuro.addEventListener('click', (e) => {
+    if (e.target === fondoOscuro) {
+        fondoOscuro.classList.remove('visible');
+    }
+});
+
+
 
 
 
@@ -79,11 +107,10 @@ botonSingUp.addEventListener('click', (e) => {
             confirmarContraseña
         };
 
-        guardarUsuario(usuario); // Guardar en localStorage
+        guardarUsuario(usuario); 
         formulario.reset();
     }
 });
-
 
 inputsContraseñas.forEach(input => {
     input.addEventListener("input", () => {
@@ -132,3 +159,46 @@ const validarContraseña = (contraseña, confirmarContraseña) => {
         return false;
     }
 };
+
+function guardarUsuario(usuario) {
+    console.log("Guardando usuario en localStorage");
+
+    const usuariosGuardados = JSON.parse(localStorage.getItem('usuarios')) || [];
+
+
+    usuariosGuardados.push(usuario);
+
+    localStorage.setItem('usuarios', JSON.stringify(usuariosGuardados));
+
+    console.log("Usuario guardado:", usuario);
+}
+
+
+const botonLogIn = document.getElementById('boton-log-in');
+const formularioLogIn = document.querySelector(".log-in");
+
+
+botonLogIn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const username = document.getElementById('username-log-in').value;
+    const password = document.getElementById('password-log-in').value;
+
+    if (validarLogIn(username, password)) {
+        alert("¡Usuario logueado correctamente!");
+        formularioLogIn.reset();
+    } else {
+        alert("Usuario o contraseña incorrectos.");
+    }
+});
+
+function validarLogIn(username, password) {
+
+    const usuariosGuardados = JSON.parse(localStorage.getItem('usuarios')) || [];
+
+
+    const usuarioEncontrado = usuariosGuardados.find(usuario => 
+        usuario.email === username && usuario.contraseña === password
+    );
+
+    return !!usuarioEncontrado;
+}

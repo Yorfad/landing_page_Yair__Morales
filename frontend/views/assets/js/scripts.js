@@ -52,3 +52,34 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+
+
+const botonSingUp = document.getElementById('boton-sign-up');
+const formulario = document.querySelector(".sign-up");
+const inputContraseña = document.getElementById('contraseña-sign-up');
+const inputConfirmarContraseña = document.getElementById('confirmarContraseña-sign-up');
+const inputsContraseñas = document.querySelectorAll(".contraseña");
+
+botonSingUp.addEventListener('click', (e) => {
+    e.preventDefault();
+    const firstName = document.getElementById('nombre-sign-up').value;
+    const lastName = document.getElementById('apellido-sign-up').value;
+    const email = document.getElementById('correo-sign-up').value;
+    const contraseña = document.getElementById('contraseña-sign-up').value;
+    const confirmarContraseña = document.getElementById('confirmarContraseña-sign-up').value;
+
+    if (validarContraseña(contraseña, confirmarContraseña)) {
+        console.log("Se está creando el usuario");
+        const usuario = {
+            firstName,
+            lastName,
+            email,
+            contraseña,
+            confirmarContraseña
+        };
+
+        guardarUsuario(usuario); // Guardar en localStorage
+        formulario.reset();
+    }
+});

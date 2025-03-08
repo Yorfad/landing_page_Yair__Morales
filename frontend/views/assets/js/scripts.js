@@ -64,7 +64,7 @@ const mostrarLogin = () => {
 const changeForm = (action) => {
     if (action === 'login') {
         document.querySelector('.section__form--log-in').classList.add('visible');
-        document.querySelector('.ssection__form--sign-up').classList.remove('visible');
+        document.querySelector('.section__form--sign-up').classList.remove('visible');
     } else if (action === 'signup') {
         document.querySelector('.section__form--sign-up').classList.add('visible');
         document.querySelector('.section__form-log-in').classList.remove('visible');

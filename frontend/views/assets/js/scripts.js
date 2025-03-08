@@ -87,7 +87,7 @@ const botonSingUp = document.getElementById('boton-sign-up');
 const formulario = document.querySelector(".sign-up");
 const inputContraseña = document.getElementById('contraseña-sign-up');
 const inputConfirmarContraseña = document.getElementById('confirmarContraseña-sign-up');
-const inputsContraseñas = document.querySelectorAll(".contraseña");
+const inputsContraseñas = document.querySelectorAll(".password");
 
 botonSingUp.addEventListener('click', (e) => {
     e.preventDefault();

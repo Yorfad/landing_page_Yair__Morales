@@ -66,6 +66,35 @@
   margin-bottom: 30px;
 }
 
+
+
+
+.btn{
+  color: #fff;
+  border: none;
+  padding: 5px 8px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 30%;
+
+}
+
+.btn__form{
+  background-color: #3d1dce;
+}
+
+.btn__form--change{
+  margin-top: 5px;
+  background-color: #aaa6b4;
+  font-size: 16px;
+}
+
+.texto{
+  width: 50%;
+  font-size: 10px;
+}
+
+
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;

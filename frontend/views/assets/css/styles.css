@@ -28,6 +28,44 @@
   display: flex;
 }
 
+.container-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  max-width: 750px;
+  width: 90%;
+  height: 90%;
+  contain: content;
+}
+
+.section {
+  display: none;
+}
+
+.section.visible {
+  display: block;
+}
+
+
+
+
+.input{
+  font-size: 12px;
+  padding: 3px;
+}
+
+
+.tittle {
+  color: #252525;
+  font-size: 35px;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;

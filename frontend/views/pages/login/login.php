@@ -16,7 +16,7 @@
         </section>
 
         <!-- Formulario de registro (oculto por defecto) -->
-        <section class="section section__formulario--sign-up">
+        <section class="section section__form--sign-up">
             <form action="" class="sign-up">
                 <h1 class="tittles">Register</h1>
                 <input class="input" placeholder="Ingrese su nombre" type="text" class="nombre" id="nombre-sign-up" required>

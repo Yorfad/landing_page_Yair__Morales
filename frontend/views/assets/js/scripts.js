@@ -83,3 +83,52 @@ botonSingUp.addEventListener('click', (e) => {
         formulario.reset();
     }
 });
+
+
+inputsContraseñas.forEach(input => {
+    input.addEventListener("input", () => {
+        input.classList.add("incorrecto");
+
+        if (inputContraseña.value === inputConfirmarContraseña.value) {
+            inputConfirmarContraseña.classList.add("correcto");
+            inputConfirmarContraseña.classList.remove("incorrecto");
+        }
+
+        if (input.id === "contraseña-sign-up" && /(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^&¿?*])(?=.{8,})/.test(inputContraseña.value)) {
+            inputContraseña.classList.add("correcto");
+            inputContraseña.classList.remove("incorrecto");
+        } else if (inputContraseña.value === inputConfirmarContraseña.value) {
+            inputConfirmarContraseña.classList.add("correcto");
+            inputConfirmarContraseña.classList.remove("incorrecto");
+        } else {
+            input.classList.add("incorrecto");
+            input.classList.remove("correcto");
+        }
+    });
+});
+
+const validarContraseña = (contraseña, confirmarContraseña) => {
+    console.log("Se está validando la contraseña");
+
+    if (/(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^&¿?*])(?=.{8,})/.test(contraseña) && contraseña === confirmarContraseña) {
+        console.log("La contraseña es válida");
+        inputContraseña.classList.add("correcto");
+        inputConfirmarContraseña.classList.add("correcto");
+        inputContraseña.classList.remove("incorrecto");
+        inputConfirmarContraseña.classList.remove("incorrecto");
+        return true;
+    } else if (!/(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^&¿?*])(?=.{8,})/.test(contraseña)) {
+        console.log("La contraseña no cumple con los requisitos");
+        inputContraseña.classList.add("incorrecto");
+        inputContraseña.classList.remove("correcto");
+        return false;
+    } else if (contraseña !== confirmarContraseña) {
+        console.log("Las contraseñas no coinciden");
+        inputConfirmarContraseña.classList.add("incorrecto");
+        inputConfirmarContraseña.classList.remove("correcto");
+        return false;
+    } else {
+        console.log("Error en la validación de la contraseña");
+        return false;
+    }
+};

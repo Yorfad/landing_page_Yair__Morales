@@ -94,6 +94,52 @@
   font-size: 10px;
 }
 
+.section{
+  display: none;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.log-in{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  min-width: 375px;
+  background: #fff;
+  text-align: center;
+  align-items: center;
+  box-shadow: 0 5px 10px rgba(14, 11, 11, 0.7);
+  padding: 20px;
+}
+
+.sign-up {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  background: #fff;
+  text-align: center;
+  align-items: center;
+  box-shadow: 0 5px 10px rgba(14, 11, 11, 0.7);
+  padding: 20px;
+}
+
+input {
+  outline: none;
+  color: #423030;
+  border: none;
+  border-bottom: solid 1px #252525;
+  padding: 0 5px;
+  margin: 15px 0px;
+  font-size: 18px;
+
+  ::placeholder {
+    color: rgba(37, 37, 37, 0.5);
+  }
+}
+
 
 :root {
   --bs-blue: #0d6efd;
